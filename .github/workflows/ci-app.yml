@@ -1,0 +1,15 @@
+name: ci-app
+
+on: push
+jobs: 
+    buils:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: setup-workflow
+              run: make setup
+            - name: tests-workflow
+              run: make test
+            - name: lint-workflow
+              run: make lint
+
